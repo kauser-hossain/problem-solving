@@ -1,13 +1,12 @@
-
-function findPeakelement(array, n) {
+const findPeckElement = (arr, n) => {
   if (n == 1) return 0;
-  if (array[0] >= array[1]) return 0;
-  if (array[n - 1] == array[n - 2]) return n - 1;
+  if (arr[0] >= arr[1]) return 0;
+  if (arr[n - 1] >= arr[n - 2]) return n - 1;
   for (let i = 0; i < n - 1; i++) {
-    if (array[i] >= array[i + 1] && array[i] >= array[i - 1]) return i;
+    if (arr[i] >= arr[i + 1] && arr[i] > arr[i - 1]) return i;
   }
-}
-let array = [23, 25, 53, 232, 2321, 462, 3421, 21, 1323];
-let n = array.length;
-let result=findPeakelement(array,n);
+};
+const arr=[3,34,2323,444444444,23322,4545];
+const n=arr.length
+const result=findPeckElement(arr,n)
 console.log(result)
